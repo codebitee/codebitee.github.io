@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>codebitee – small tools and useful data</title>
+<meta name="description" content="codebitee is a growing home for small tools, useful data and things I build, added one at a time.">
+<link rel="canonical" href="https://codebitee.github.io/">
+<link rel="icon" href="/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/logo.png">
+<meta property="og:title" content="codebitee">
+<meta property="og:description" content="Small tools, useful data and things I build, added one at a time.">
+<meta property="og:url" content="https://codebitee.github.io/">
+<meta property="og:image" content="https://codebitee.github.io/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f6fb;
+    --ink: #1b2340;
+    --muted: #55607e;
+    --blue: #3446e0;
+    --yellow: #ffcf4d;
+    --line: #d9deec;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 1.0625rem/1.65 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 40rem; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
+  .bite {
+    width: 7rem; height: 7rem; border-radius: 50%;
+    background: var(--yellow); position: relative; margin-bottom: 2rem;
+  }
+  .bite::after {
+    content: ""; position: absolute; top: -1rem; right: -1rem;
+    width: 3.5rem; height: 3.5rem; border-radius: 50%; background: var(--bg);
+  }
+  h1 {
+    margin: 0 0 1rem;
+    font: 800 clamp(3rem, 14vw, 5.5rem)/1 "Bricolage Grotesque", system-ui, sans-serif;
+    letter-spacing: -0.03em;
+  }
+  .lead { margin: 0 0 3rem; max-width: 32rem; color: var(--muted); font-size: 1.1875rem; }
+  h2 { margin: 0 0 .75rem; font: 700 1.5rem/1.2 "Bricolage Grotesque", system-ui, sans-serif; }
+  .empty { margin: 0; padding: 1.25rem 0; border-top: 2px solid var(--ink); }
+  .empty p { margin: 0; color: var(--muted); }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .9375rem; color: var(--muted); }
+  a { color: var(--blue); text-underline-offset: 3px; }
+  a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="bite" aria-hidden="true"></div>
+  <h1>codebitee</h1>
+  <p class="lead">Small tools, useful data and things I build, added one at a time.</p>
+
+  <section aria-labelledby="library">
+    <h2 id="library">Library</h2>
+    <div class="empty">
+      <p>Nothing here yet. The first tool will be listed on this page as soon as it’s ready.</p>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://github.com/codebitee">codebitee on GitHub</a>
+  </footer>
+</main>
+</body>
+</html>
