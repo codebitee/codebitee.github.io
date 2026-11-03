@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta name="google-site-verification" content="8WyhXmkdr9R3UFQiyU5af7B5KaKt5NuxYHmkPE3yxyY" />  
+<head> 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>codebitee – small tools and useful data</title>
 <meta name="description" content="codebitee is a growing home for small tools, useful data and things I build, added one at a time.">
+<meta name="theme-color" content="#04050c">
+<meta name="google-site-verification" content="8WyhXmkdr9R3UFQiyU5af7B5KaKt5NuxYHmkPE3yxyY" />  <!-- Paste your google-site-verification meta tag here if you added one to the old index.html -->
 <link rel="canonical" href="https://codebitee.github.io/">
 <link rel="icon" href="/logo.png" type="image/png">
 <link rel="apple-touch-icon" href="/logo.png">
@@ -15,63 +16,170 @@
 <meta property="og:image" content="https://codebitee.github.io/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #f4f6fb;
-    --ink: #1b2340;
-    --muted: #55607e;
-    --blue: #3446e0;
-    --yellow: #ffcf4d;
-    --line: #d9deec;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 400 1.0625rem/1.65 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  }
-  main { max-width: 40rem; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
-  .bite {
-    width: 7rem; height: 7rem; border-radius: 50%;
-    background: var(--yellow); position: relative; margin-bottom: 2rem;
-  }
-  .bite::after {
-    content: ""; position: absolute; top: -1rem; right: -1rem;
-    width: 3.5rem; height: 3.5rem; border-radius: 50%; background: var(--bg);
-  }
-  h1 {
-    margin: 0 0 1rem;
-    font: 800 clamp(3rem, 14vw, 5.5rem)/1 "Bricolage Grotesque", system-ui, sans-serif;
-    letter-spacing: -0.03em;
-  }
-  .lead { margin: 0 0 3rem; max-width: 32rem; color: var(--muted); font-size: 1.1875rem; }
-  h2 { margin: 0 0 .75rem; font: 700 1.5rem/1.2 "Bricolage Grotesque", system-ui, sans-serif; }
-  .empty { margin: 0; padding: 1.25rem 0; border-top: 2px solid var(--ink); }
-  .empty p { margin: 0; color: var(--muted); }
-  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .9375rem; color: var(--muted); }
-  a { color: var(--blue); text-underline-offset: 3px; }
-  a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<main>
-  <div class="bite" aria-hidden="true"></div>
-  <h1>codebitee</h1>
-  <p class="lead">Small tools, useful data and things I build, added one at a time.</p>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><img src="/logo.png" alt="" width="36" height="36">codebitee</a>
+    <div class="search" role="search"><input id="q" type="search" placeholder="Search" aria-label="Search tools, blogs and featured items" autocomplete="off"></div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#featured">Featured</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="results" id="results" hidden></div>
+  </div>
+</header>
 
-  <section aria-labelledby="library">
-    <h2 id="library">Library</h2>
-    <div class="empty">
-      <p>Nothing here yet. The first tool will be listed on this page as soon as it’s ready.</p>
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>codebitee</h1>
+      <p class="lead">Small tools, useful data and things I build, added one at a time.</p>
+      <div class="actions">
+        <a class="btn" href="#tools">Browse tools</a>
+      </div>
     </div>
-  </section>
+    <img class="hero-logo" src="/logo.png" alt="codebitee logo" width="352" height="352">
+  </div>
 
-  <footer>
-    <a href="https://github.com/codebitee">codebitee on GitHub</a>
-  </footer>
+  <section id="tools"><div class="wrap">
+    <h2>Tools</h2>
+    <div class="tools" id="toolsGrid"></div>
+  </div></section>
+
+  <section id="featured"><div class="wrap">
+    <h2>Featured</h2>
+    <div class="feats" id="featuredGrid"></div>
+  </div></section>
+
+  <section id="blogs"><div class="wrap">
+    <h2>Blogs</h2>
+    <div class="feats" id="blogsGrid"></div>
+  </div></section>
+
+  <section id="about"><div class="wrap about">
+    <div>
+      <h2>About</h2>
+      <p>codebitee is a growing home for small tools and useful data. Everything I build gets added here, so the site grows along with it.</p>
+    </div>
+    <dl>
+      <div><dt>Focus</dt><dd>Tools and data</dd></div>
+      <div><dt>Updates</dt><dd>New items added one by one</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/codebitee">github.com/codebitee</a></dd></div>
+      <div><dt>Status</dt><dd>Early version</dd></div>
+    </dl>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <h2>Contact</h2>
+    <p class="sub">Find me on any of these.</p>
+    <div class="contacts">
+      <a href="https://github.com/codebitee"><span class="ico" aria-hidden="true">GH</span><span><b>GitHub</b><small>@codebitee</small></span></a>
+      <a href="#contact"><span class="ico" aria-hidden="true">@</span><span><b>Gmail</b><small>add address</small></span></a>
+      <a href="#contact"><span class="ico" aria-hidden="true">IG</span><span><b>Instagram</b><small>add handle</small></span></a>
+      <a href="#contact"><span class="ico" aria-hidden="true">YT</span><span><b>YouTube</b><small>add channel</small></span></a>
+      <a href="#contact"><span class="ico" aria-hidden="true">X</span><span><b>X (Twitter)</b><small>add handle</small></span></a>
+      <a href="#contact"><span class="ico" aria-hidden="true">in</span><span><b>LinkedIn</b><small>add profile</small></span></a>
+      <a href="#contact"><span class="ico" aria-hidden="true">TG</span><span><b>Telegram</b><small>add handle</small></span></a>
+    </div>
+  </div></section>
 </main>
+
+<footer><div class="wrap">
+  <span>© 2026 codebitee</span>
+  <span><a href="/privacy.html">Privacy Policy</a> · <a href="https://github.com/codebitee">GitHub</a></span>
+</div></footer>
+
+<script src="/data.js"></script>
+<script>
+  var btn = document.getElementById("menuBtn"), nav = document.getElementById("nav");
+  btn.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open);
+  });
+  nav.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") { nav.classList.remove("open"); btn.setAttribute("aria-expanded", false); }
+  });
+
+  var cats = { tool: ["toolsGrid", "Tool"], featured: ["featuredGrid", "Featured"], blog: ["blogsGrid", "Blog"] };
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+  function isExt(u) { return /^https?:\/\//i.test(u) && u.indexOf(location.origin) !== 0; }
+  function make(tag, cls, it) {
+    var n = el(it.link ? "a" : tag, cls);
+    if (it.link) { n.href = it.link; if (isExt(it.link)) { n.target = "_blank"; n.rel = "noopener"; } }
+    return n;
+  }
+  (window.SITE_ITEMS || []).forEach(function (it) {
+    var c = cats[it.type], n;
+    if (!c) return;
+    if (it.type === "tool") {
+      n = make("div", "tool", it);
+      var badge = !it.link ? "soon" : isExt(it.link) ? "\u2197" : "";
+      if (badge) n.appendChild(el("span", "soon", badge));
+      var ico = el("span", "ico", it.icon || "\u25C6"); ico.setAttribute("aria-hidden", "true");
+      n.appendChild(ico);
+      n.appendChild(el("b", "", it.name));
+      if (it.desc) n.appendChild(el("small", "", it.desc));
+    } else {
+      n = make("article", "feat", it);
+      if (it.type === "featured") n.appendChild(el("div", "thumb"));
+      var body = el("div");
+      body.appendChild(el("h3", "", it.name));
+      var meta = it.tag || it.date || (it.link ? "" : "Coming soon");
+      if (meta) body.appendChild(el("p", "", meta));
+      if (it.desc) body.appendChild(el("small", "", it.desc));
+      n.appendChild(body);
+    }
+    n.setAttribute("data-cat", c[1]);
+    document.getElementById(c[0]).appendChild(n);
+  });
+
+  var items = [].slice.call(document.querySelectorAll("[data-cat]")),
+      q = document.getElementById("q"), box = document.getElementById("results");
+  items.forEach(function (el, i) { el.id = el.id || "item" + i; });
+  function nameOf(el) { return el.querySelector("b,h3").textContent; }
+  function find() {
+    var v = q.value.trim().toLowerCase();
+    if (!v) return [];
+    return items.filter(function (el) {
+      var d = el.querySelector("small");
+      return (nameOf(el) + " " + (d ? d.textContent : "")).toLowerCase().indexOf(v) > -1;
+    }).slice(0, 8);
+  }
+  function show() {
+    if (!q.value.trim()) { box.hidden = true; return; }
+    var m = find();
+    box.innerHTML = m.length ? m.map(function (el) {
+      return '<a href="#' + el.id + '">' + nameOf(el) + "<span>" + el.getAttribute("data-cat") + "</span></a>";
+    }).join("") : "<p>No results</p>";
+    box.hidden = false;
+  }
+  function go(id) {
+    var el = document.getElementById(id);
+    box.hidden = true;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.classList.add("hit");
+    setTimeout(function () { el.classList.remove("hit"); }, 1800);
+  }
+  q.addEventListener("input", show);
+  q.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") box.hidden = true;
+    if (e.key === "Enter") { var m = find(); if (m.length) go(m[0].id); }
+  });
+  box.addEventListener("click", function (e) {
+    var a = e.target.closest("a");
+    if (a) { e.preventDefault(); go(a.getAttribute("href").slice(1)); }
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".search") && !e.target.closest("#results")) box.hidden = true;
+  });
+</script>
 </body>
 </html>
