@@ -12,7 +12,7 @@
 */
 window.SITE_ITEMS = [
   // ---- Tools ----
-  { type: "tool", name: "JSON Formatter", desc: "Tidy and check JSON.", icon: "{ }", link: "" },
+  { type: "tool", name: "GetYT", desc: "Download Youtube Videos.", icon: "[YT]", link: "https://codebitee.github.io/GetYT/" },
   { type: "tool", name: "Text Counter", desc: "Words and characters.", icon: "Aa", link: "" },
   { type: "tool", name: "Converter", desc: "Units made simple.", icon: "\u21C4", link: "" },
   { type: "tool", name: "Color Picker", desc: "Pick and copy colors.", icon: "\u25D0", link: "" },
